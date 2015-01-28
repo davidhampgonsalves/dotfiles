@@ -1,0 +1,27 @@
+
+vim
+  indent
+  toggle comments
+  open files (platform, entitysoup)
+  buffer switching
+  use system paste buffer
+  syntax highlighting
+  relative line numbers in insert
+
+zsh
+  setup command line prefix to be short
+  repo shortcut
+  e set to vim
+  g - git
+  d - docker
+  dv - docker-vagrant
+  b - bundler
+  
+
+iterm
+  colorscheme
+
+tmux
+  pasting 
+  tmuxinator
+    platform

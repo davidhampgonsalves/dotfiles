@@ -1,0 +1,50 @@
+source ~/.vim.plug
+
+let mapleader=" "
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlP'
+
+set backspace=indent,eol,start
+
+color automation
+
+set number
+set relativenumber
+
+set cursorline
+set expandtab
+set modelines=0
+set shiftwidth=2
+set clipboard=unnamed
+set encoding=utf-8
+set tabstop=2
+set nowrap
+set expandtab
+set nowritebackup
+set noswapfile
+set nobackup
+set hidden      " Allow buffer switching even if unsaved
+set mouse=a     " Enable mouse usage (all modes)
+set lazyredraw  " no redraws in macros
+set ttyfast
+set cmdheight=2
+set ignorecase " case-insensitive searching
+set smartcase  " but become case-sensitive if you type uppercase characters
+set hlsearch   " highlight search matches
+
+" Automatic formatting
+autocmd BufWritePre *.rb :%s/\s\+$//e
+autocmd BufWritePre *.go :%s/\s\+$//e
+autocmd BufWritePre *.haml :%s/\s\+$//e
+autocmd BufWritePre *.html :%s/\s\+$//e
+autocmd BufWritePre *.scss :%s/\s\+$//e
+autocmd BufWritePre *.slim :%s/\s\+$//e
+
+" Quick ESC
+imap kj <ESC>
+
+map <Leader>a :bprev<Return>
+map <Leader>s :bnext<Return>
+
+nmap <C-l> :bnext<cr>
+nmap <C-h> :bprevious<cr>

@@ -1,0 +1,22 @@
+# Mac OSX
+.DS_Store
+.~lock.*
+
+# SublimeText
+*.sublime-project
+*.sublime-workspace
+
+# ctags config file
+.ctags
+.__ctags
+
+*.orig
+*.lck
+*~
+*.sassc
+
+.Spotlight-V100
+.Trashes
+
+*.javac
+*.pyc
