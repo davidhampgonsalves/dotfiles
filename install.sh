@@ -7,10 +7,9 @@ brew install caskroom/cask/brew-cask
 brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 
 # install some apps
-brew install zsh  tmux wget tree htop nodejs icdiff direnv coreutils
-brew link lua
-brew install --HEAD --with-lua vim
-brew cask install transmission google-chrome-canary vlc iterm2 sublime-text3 nosleep flux
+brew install zsh  tmux wget tree htop nodejs icdiff direnv coreutils direnv
+brew install --HEAD vim
+brew cask install transmission google-chrome-canary vlc iterm2 sublime-text3 nosleep flux java
 
 # install neovim
 brew tap neovim/homebrew-neovim
@@ -20,9 +19,6 @@ brew install --HEAD neovim
 mkdir -p ~/.vim/autoload
 curl -fLo ~/.vim/autoload/plug.vim \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# install oh my zsh
-#curl -L http://install.ohmyz.sh | sh
 
 # install prezto
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
@@ -34,9 +30,6 @@ chsh -s /bin/zsh
 
 # caps to esc utility
 brew cask install seil karabiner
-
-# install YADR https://github.com/skwp/dotfilesi
-#sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`"
 
 # install mathiasbynens dotfile osx defaults
 git clone https://github.com/mathiasbynens/dotfiles.git mathiasbynens-dotfiles  && cd mathiasbynens-dotfiles && ./.osx
@@ -56,7 +49,6 @@ echo "generating ssh keypair"
 ssh-keygen -t rsa
 pbcopy < ~/.ssh/id_rsa.pub
 
-# iterm2 - still use hotkey for drop down?
 
 # transmission settings
 defaults write org.m0k.transmission DeleteOriginalTorrent  1

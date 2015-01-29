@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'kien/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
-Plug 'tpope/vim-commentary'
+Plug 'tomtom/tcomment_vim'
 Plug 'fholgado/minibufexpl.vim'
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
