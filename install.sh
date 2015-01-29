@@ -6,8 +6,13 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew install caskroom/cask/brew-cask
 brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 
+# install tmuxinator
+sudo gem install tmuxinator
+wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh
+mv tmuxinator.zsh ,tmuxinator.zsh
+
 # install some apps
-brew install zsh  tmux wget tree htop nodejs icdiff direnv coreutils direnv
+brew install zsh tmux wget tree htop nodejs icdiff direnv coreutils direnv
 brew install --HEAD vim
 brew cask install transmission google-chrome-canary vlc iterm2 sublime-text3 nosleep flux java
 
@@ -27,6 +32,7 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 chsh -s /bin/zsh
+touch ~/.zsh.user.zsh
 
 # caps to esc utility
 brew cask install seil karabiner
