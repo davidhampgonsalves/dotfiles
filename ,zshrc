@@ -1,1 +1,20 @@
-/Users/davidhamp-gonsalves/.zprezto/runcoms/zshrc
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# set java home
+export JAVA_HOME="$(/usr/libexec/java_home)"
+
+eval $(ssh-agent)
+eval "$(direnv hook zsh)"
+
+export EDITOR=/usr/local/bin/vim
+export VISUAL=/usr/local/bin/vim
+
+bindkey '^k' history-search-backward
+bindkey '^j' history-search-forward
+
+# source ~/.tmuxinator.zsh
+source ~/.zsh.user.zsh
+source ~/.zsh.aliases.zsh
