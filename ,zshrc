@@ -9,6 +9,8 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 eval $(ssh-agent)
 eval "$(direnv hook zsh)"
 
+eval "$(rbenv init -)"
+
 export EDITOR=/usr/local/bin/vim
 export VISUAL=/usr/local/bin/vim
 

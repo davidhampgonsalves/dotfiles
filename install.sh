@@ -36,6 +36,7 @@ touch ~/.zsh.user.zsh
 
 # caps to esc utility
 brew cask install seil karabiner
+mv karabiner.xml ~/Library/Application\ Support/Karabiner/private.xml
 
 # install mathiasbynens dotfile osx defaults
 git clone https://github.com/mathiasbynens/dotfiles.git mathiasbynens-dotfiles  && cd mathiasbynens-dotfiles && ./.osx

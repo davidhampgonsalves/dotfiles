@@ -6,7 +6,7 @@ let mapleader=" "
 
 set backspace=indent,eol,start
 
-color automation
+color 0x7A69_dark 
 
 set number
 set relativenumber
