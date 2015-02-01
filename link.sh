@@ -8,3 +8,5 @@ for filePath in $PWD/\,*; do
   echo "synlinking: " ${fileName/\,/.}
   ln -s -f  $filePath $HOME/${fileName/\,/.}
 done
+
+git config --global core.excludesfile ~/.gitignore_global

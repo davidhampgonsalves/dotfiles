@@ -4,6 +4,7 @@
 
 [core]
 	editor = vim
+	excludesfile = /Users/david/.gitignore_global
 
 [web]
 	browser = google-chrome

@@ -6,19 +6,21 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew install caskroom/cask/brew-cask
 brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 
-# install tmuxinator
-sudo gem install tmuxinator
+# install some apps
+echo "installing pkgs with brew/cask"
+installPkg "brew cask" "transmission google-chrome vlc iterm2 sublime-text nosleep flux java"
+echo "installing pkgs with brew"
+brew tap neovim/homebrew-neovim
+installPkg "brew" "vim nvim zsh tmux wget tree htop nodejs go leiningen icdiff direnv coreutils direnv rbenv aspell"
+
+# start rbenv so gems go in the right place
+rbenv init -
+echo "installing gems"
+installPkg "gem" "bundle tmuxinator"
+
+# setup tmuxinator
 wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh
 mv tmuxinator.zsh ,tmuxinator.zsh
-
-# install some apps
-brew install zsh tmux wget tree htop nodejs icdiff direnv coreutils direnv
-brew install --HEAD vim
-brew cask install transmission google-chrome-canary vlc iterm2 sublime-text3 nosleep flux java
-
-# install neovim
-brew tap neovim/homebrew-neovim
-brew install --HEAD neovim
 
 # install vim-plug
 mkdir -p ~/.vim/autoload
@@ -26,11 +28,14 @@ curl -fLo ~/.vim/autoload/plug.vim \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # install prezto
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
+[[ ! -a ~/.prezto ]] {
+  echo "installing prezto"
+  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+  setopt EXTENDED_GLOB
+  for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+  done
+}
 chsh -s /bin/zsh
 touch ~/.zsh.user.zsh
 
@@ -56,7 +61,6 @@ echo "generating ssh keypair"
 ssh-keygen -t rsa
 pbcopy < ~/.ssh/id_rsa.pub
 
-
 # transmission settings
 defaults write org.m0k.transmission DeleteOriginalTorrent  1
 defaults write org.m0k.transmission DownloadAsk 0
@@ -75,6 +79,17 @@ pbcopy < ~/.ssh/id_rsa.pub
 echo "generating ssh keypair"
 ssh-keygen -t rsa
 pbcopy < ~/.ssh/id_rsa.pub
+
+
+installPkg() {
+  for pkg in $2; do
+    if $1 list  | grep -q "^${pkg}"; then
+      echo "  package '$pkg' is already installed"
+    else
+      eval $1 install $pkg 
+    fi
+  done
+}
 
 
 echo "things you need to do:"
