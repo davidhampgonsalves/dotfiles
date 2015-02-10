@@ -14,12 +14,10 @@ set relativenumber
 set cursorline
 set expandtab
 set modelines=0
-set shiftwidth=2
 set clipboard=unnamed
 set encoding=utf-8
 set tabstop=2
 set nowrap
-set expandtab
 set nowritebackup
 set noswapfile
 set nobackup
@@ -31,6 +29,9 @@ set cmdheight=2
 set ignorecase " case-insensitive searching
 set smartcase  " but become case-sensitive if you type uppercase characters
 set hlsearch   " highlight search matches
+set expandtab
+set shiftwidth=2
+set softtabstop=2
 
 " Automatic formatting
 autocmd BufWritePre *.rb :%s/\s\+$//e

@@ -3,8 +3,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'kien/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
-Plug 'tomtom/tcomment_vim'
 Plug 'fholgado/minibufexpl.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
