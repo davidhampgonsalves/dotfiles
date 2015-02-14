@@ -3,6 +3,7 @@ source ~/.vim.plug
 let mapleader=" "
 "let g:ctrlp_map = '<c-p>'
 "let g:ctrlp_cmd = 'CtrlP'
+" nnoremap <silent> <Leader>1 :set paste!<cr>
 
 set backspace=indent,eol,start
 
@@ -33,14 +34,6 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
-" Automatic formatting
-autocmd BufWritePre *.rb :%s/\s\+$//e
-autocmd BufWritePre *.go :%s/\s\+$//e
-autocmd BufWritePre *.haml :%s/\s\+$//e
-autocmd BufWritePre *.html :%s/\s\+$//e
-autocmd BufWritePre *.scss :%s/\s\+$//e
-autocmd BufWritePre *.slim :%s/\s\+$//e
-
 " Quick ESC
 imap kj <ESC>
 
@@ -49,3 +42,15 @@ map <Leader>s :bnext<Return>
 
 nmap <C-l> :bnext<cr>
 nmap <C-h> :bprevious<cr>
+
+" Smooth Scroll
+" =============
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+
+" yank stack
+" ==========
+let g:yankstack_map_keys = 0
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste

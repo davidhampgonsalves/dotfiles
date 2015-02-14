@@ -4,13 +4,19 @@ call plug#begin('~/.vim/plugged')
 Plug 'kien/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'fholgado/minibufexpl.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'vim-multiple-cursors'
+Plug 'tpope/vim-fugitive'
+Plug 'terryma/vim-smooth-scroll'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
+Plug 'maxbrunsfeld/vim-yankstack'
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'kchmck/vim-coffee-script', {'for': 'coffeescript'}
+Plug 'tpope/vim-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 " Using git URL
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+" Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
 call plug#end()
