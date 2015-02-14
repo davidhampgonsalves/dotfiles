@@ -9,4 +9,5 @@ for filePath in $PWD/\,*; do
   ln -s -f  $filePath $HOME/${fileName/\,/.}
 done
 
+ln -s -f  ,vimrc $HOME/,nvimrc
 git config --global core.excludesfile ~/.gitignore_global
