@@ -1,20 +1,20 @@
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'vim-scripts/paredit.vim'
+" Plug 'vim-multiple-cursors'
+Plug 'vim-scripts/YankRing.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
 Plug 'kien/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'fholgado/minibufexpl.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'vim-multiple-cursors'
-Plug 'tpope/vim-fugitive'
-Plug 'terryma/vim-smooth-scroll'
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-commentary'
-Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'yonchu/accelerated-smooth-scroll'
 
 Plug 'kchmck/vim-coffee-script', {'for': 'coffeescript'}
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 " Using git URL
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
