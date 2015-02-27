@@ -9,7 +9,8 @@ Plug 'tpope/vim-commentary'
 Plug 'flazz/vim-colorschemes'
 Plug 'airblade/vim-gitgutter'
 Plug 'maxbrunsfeld/vim-yankstack'
-Plug 'jiangmiao/auto-pairsjiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
+Plug 'yonchu/accelerated-smooth-scroll'
 
 " Using git URL
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
