@@ -11,6 +11,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'jiangmiao/auto-pairs'
 Plug 'yonchu/accelerated-smooth-scroll'
+Plug 'justinmk/vim-sneak'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
+
 
 " Using git URL
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
