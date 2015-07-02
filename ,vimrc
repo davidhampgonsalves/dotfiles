@@ -34,6 +34,10 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+" Increment / Decrement numbers
+:nnoremap + <C-a>
+:nnoremap - <C-x>
+
 " Quick ESC
 imap kj <ESC>
 
@@ -60,3 +64,5 @@ omap f <Plug>Sneak_s
 " tagbar
 " ======
 nmap <F8> :TagbarToggle<CR>
+
+
