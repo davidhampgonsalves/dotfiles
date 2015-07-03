@@ -16,7 +16,7 @@ installPkg "brew" "vim nvim zsh tmux wget tree htop nodejs go leiningen icdiff d
 # start rbenv so gems go in the right place
 rbenv init -
 echo "installing gems"
-installPkg "gem" "bundle tmuxinator"
+installPkg "gem" "bundle"
 
 # setup tmuxinator
 wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh
