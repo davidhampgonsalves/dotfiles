@@ -1,4 +1,4 @@
-source ~/.vim.plug
+source ~/.nvim.vundle
 
 let mapleader=" "
 
@@ -31,6 +31,8 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+syntax on
+
 " Increment / Decrement numbers
 :nnoremap + <C-a>
 :nnoremap - <C-x>
@@ -61,5 +63,3 @@ omap f <Plug>Sneak_s
 " tagbar
 " ======
 nmap <F8> :TagbarToggle<CR>
-
-

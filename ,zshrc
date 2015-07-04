@@ -11,8 +11,8 @@ eval "$(direnv hook zsh)"
 
 eval "$(rbenv init -)"
 
-export EDITOR=/usr/local/bin/vim
-export VISUAL=/usr/local/bin/vim
+export EDITOR=/usr/local/bin/nvim
+export VISUAL=/usr/local/bin/nvim
 
 bindkey '^k' history-search-backward
 bindkey '^j' history-search-forward

@@ -10,6 +10,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'yonchu/accelerated-smooth-scroll'
 Plug 'justinmk/vim-sneak'
+Plug 'kien/rainbow_parentheses'
 
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'

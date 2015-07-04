@@ -1,9 +1,6 @@
 source ~/.vim.plug
 
 let mapleader=" "
-"let g:ctrlp_map = '<c-p>'
-"let g:ctrlp_cmd = 'CtrlP'
-" nnoremap <silent> <Leader>1 :set paste!<cr>
 
 set backspace=indent,eol,start
 
@@ -68,4 +65,3 @@ nmap <F8> :TagbarToggle<CR>
 " ctrl-p
 " ======
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-
