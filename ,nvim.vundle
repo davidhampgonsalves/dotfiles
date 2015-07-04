@@ -1,0 +1,30 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'FelikZ/ctrlp-py-matcher'
+Plugin 'tpope/vim-fugitive'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'yonchu/accelerated-smooth-scroll'
+Plugin 'justinmk/vim-sneak'
+Plugin 'floobits/floobits-neovim'
+
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'majutsushi/tagbar'
+
+Plugin 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+" Not super happy with the following
+Plugin 'jiangmiao/auto-pairs'
+" Plugin 'vim-scripts/paredit.vim'
+Plugin 'tpope/vim-commentary'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
