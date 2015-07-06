@@ -11,16 +11,11 @@ eval "$(direnv hook zsh)"
 
 eval "$(rbenv init -)"
 
-export EDITOR=/usr/local/bin/nvim
-export VISUAL=/usr/local/bin/nvim
+export EDITOR=/usr/local/bin/vim
+export VISUAL=/usr/local/bin/vim
 
 bindkey '^k' history-search-backward
 bindkey '^j' history-search-forward
 
-# source ~/.tmuxinator.zsh
 source ~/.zsh.user.zsh
 source ~/.zsh.aliases.zsh
-
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/david/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
