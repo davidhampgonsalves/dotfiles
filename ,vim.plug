@@ -4,18 +4,19 @@ call plug#begin('~/.vim/plugged')
 Plug 'fholgado/minibufexpl.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
+Plug 'vim-scripts/DeleteTrailingWhitespace'
 Plug 'tpope/vim-fugitive'
 Plug 'flazz/vim-colorschemes'
 Plug 'airblade/vim-gitgutter'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'yonchu/accelerated-smooth-scroll'
 Plug 'justinmk/vim-sneak'
-Plug 'kien/rainbow_parentheses'
 
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'luochen1990/rainbow', { 'for': 'clojure' }
 
 " Not super happy with the following
 Plug 'jiangmiao/auto-pairs'
