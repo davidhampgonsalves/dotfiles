@@ -6,22 +6,22 @@ Plug 'kien/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'vim-scripts/DeleteTrailingWhitespace'
 Plug 'tpope/vim-fugitive'
-Plug 'flazz/vim-colorschemes'
 Plug 'airblade/vim-gitgutter'
+Plug 'flazz/vim-colorschemes'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'yonchu/accelerated-smooth-scroll'
 Plug 'justinmk/vim-sneak'
 
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'luochen1990/rainbow', { 'for': 'clojure' }
 
 " Not super happy with the following
-Plug 'jiangmiao/auto-pairs'
 " Plug 'vim-scripts/paredit.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
+Plug 'ludovicchabant/vim-gutentags'
 
 " Using git URL
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
