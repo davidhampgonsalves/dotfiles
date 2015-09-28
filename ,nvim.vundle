@@ -22,7 +22,6 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 " Not super happy with the following
-Plugin 'jiangmiao/auto-pairs'
 " Plugin 'vim-scripts/paredit.vim'
 Plugin 'tpope/vim-commentary'
 
