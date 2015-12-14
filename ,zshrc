@@ -19,3 +19,6 @@ bindkey '^j' history-search-forward
 
 source ~/.zsh.user.zsh
 source ~/.zsh.aliases.zsh
+
+export NVM_DIR="/Users/david/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

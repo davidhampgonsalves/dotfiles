@@ -19,7 +19,6 @@ Plug 'luochen1990/rainbow', { 'for': 'clojure' }
 
 " Not super happy with the following
 Plug 'tpope/vim-commentary'
-Plug 'ludovicchabant/vim-gutentags'
 
 " Using git URL
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
