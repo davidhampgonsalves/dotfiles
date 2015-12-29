@@ -39,10 +39,6 @@ curl -fLo ~/.vim/autoload/plug.vim \
 chsh -s /bin/zsh
 touch ~/.zsh.user.zsh
 
-# caps to esc utility
-brew cask install seil karabiner
-mv karabiner.xml ~/Library/Application\ Support/Karabiner/private.xml
-
 # install mathiasbynens dotfile osx defaults
 git clone https://github.com/mathiasbynens/dotfiles.git mathiasbynens-dotfiles  && cd mathiasbynens-dotfiles && ./.osx
 # revert some of those defaults
