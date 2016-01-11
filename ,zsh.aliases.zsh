@@ -1,4 +1,4 @@
 hash -d r="$HOME/repos"
-hash -d prj="$HOME/projects"
+hash -d w="$HOME/work"
 
-alias f=mdfind -onlyin
+alias dm='docker-machine'
