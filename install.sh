@@ -8,7 +8,7 @@ brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 
 # install some apps
 echo "installing pkgs with brew/cask"
-installPkg "brew cask" "transmission google-chrome vlc iterm2 sublime-text nosleep flux java caskroom/versions/firefoxdeveloperedition"
+installPkg "brew cask" "transmission google-chrome vlc iterm2 sublime-text nosleep flux ctags java caskroom/versions/firefoxdeveloperedition"
 echo "installing pkgs with brew"
 brew tap neovim/homebrew-neovim
 installPkg "brew" "vim nvim zsh tmux wget tree htop nodejs go leiningen icdiff direnv coreutils direnv rbenv aspell ant"
@@ -26,6 +26,9 @@ mv tmuxinator.zsh ,tmuxinator.zsh
 mkdir -p ~/.vim/autoload
 curl -fLo ~/.vim/autoload/plug.vim \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# setup glutentags folder
+mkdir ~/.tag-cache
 
 # install prezto
 [[ ! -a ~/.prezto ]] {

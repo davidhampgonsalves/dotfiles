@@ -65,3 +65,8 @@ nmap <F8> :TagbarToggle<CR>
 " ctrl-p
 " ======
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
+" glutentags
+" ==========
+set statusline+=%{gutentags#statusline()}
+let g:gutentags_cache_dir=expand('~/.tag-cache')
