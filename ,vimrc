@@ -21,14 +21,17 @@ set noswapfile
 set nobackup
 set hidden      " Allow buffer switching even if unsaved
 set mouse=a     " Enable mouse usage (all modes)
-set ttyfast
-set cmdheight=2
 set ignorecase " case-insensitive searching
 set smartcase  " but become case-sensitive if you type uppercase characters
 set hlsearch   " highlight search matches
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+set ttyfast
+set lazyredraw
+
+set wildmenu
+set wildmode=longest:full,full
 
 " Increment / Decrement numbers
 :nnoremap + <C-a>
@@ -67,7 +70,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-let g:airline_section_b=""
+let g:airline_section_b="%f"
 let g:airline_section_c=""
 let g:airline_section_x=""
 let g:airline_section_y=""
@@ -76,6 +79,7 @@ let g:airline_section_z="%{gutentags#statusline()}"
 " ctrl-p
 " ======
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+set wildignore+=*/vendor/*,*/node_modules/*,*.so,*.swp,*.zip
 
 " glutentags
 " ==========
