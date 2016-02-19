@@ -84,3 +84,8 @@ set wildignore+=*/vendor/*,*/node_modules/*,*.so,*.swp,*.zip
 " glutentags
 " ==========
 let g:gutentags_cache_dir=expand('~/.tag-cache')
+
+" delete whitespace
+" =================
+let blacklist = ['md']
+autocmd BufWritePre * if index(blacklist, &ft) < 0 | :DeleteTrailingWhitespace

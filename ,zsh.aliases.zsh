@@ -7,4 +7,8 @@ alias dm='docker-machine'
 ff () { mdfind -onlyin . $* | grep -v -f ~/.search-exclude.txt }
 
 # grep excluding common code library locations
-ffg () { grep -R --exclude-dir=vendor --exclude-dir=node_modules $* . }
+ffg () { grep -R -I --exclude-dir=vendor/bundle/ --exclude-dir=node_modules/ $* . }
+
+# postgres start / stop
+alias postgres.start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias postgres.stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
