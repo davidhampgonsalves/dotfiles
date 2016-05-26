@@ -1,10 +1,10 @@
-source ~/.nvim.vundle
+source ~/.nvim.plug
 
 let mapleader=" "
 
 set backspace=indent,eol,start
 
-color 0x7A69_dark 
+color 0x7A69_dark
 
 set number
 set relativenumber
@@ -21,17 +21,17 @@ set noswapfile
 set nobackup
 set hidden      " Allow buffer switching even if unsaved
 set mouse=a     " Enable mouse usage (all modes)
-set lazyredraw  " no redraws in macros
-set ttyfast
-set cmdheight=2
 set ignorecase " case-insensitive searching
 set smartcase  " but become case-sensitive if you type uppercase characters
 set hlsearch   " highlight search matches
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+set ttyfast
+set lazyredraw
 
-syntax on
+set wildmenu
+set wildmode=longest:full,full
 
 " Increment / Decrement numbers
 :nnoremap + <C-a>
@@ -60,6 +60,32 @@ nmap f <Plug>Sneak_s
 xmap f <Plug>Sneak_s
 omap f <Plug>Sneak_s
 
-" tagbar
+" airline
+" =======
+set noshowmode
+set laststatus=2
+set ttimeoutlen=50
+let g:airline_theme = 'wombat'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_section_b="%f"
+let g:airline_section_c=""
+let g:airline_section_x=""
+let g:airline_section_y=""
+let g:airline_section_z="%{gutentags#statusline()}"
+
+" ctrl-p
 " ======
-nmap <F8> :TagbarToggle<CR>
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+set wildignore+=*/vendor/*,*/node_modules/*,*.so,*.swp,*.zip
+
+" glutentags
+" ==========
+let g:gutentags_cache_dir=expand('~/.tag-cache')
+
+" delete whitespace
+" =================
+let blacklist = ['md']
+autocmd BufWritePre * if index(blacklist, &ft) < 0 | :DeleteTrailingWhitespace

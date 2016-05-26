@@ -5,14 +5,15 @@ fi
 
 # set java home
 export JAVA_HOME="$(/usr/libexec/java_home)"
+export DISABLE_SPRING=true
 
 eval $(ssh-agent)
 eval "$(direnv hook zsh)"
 
 eval "$(rbenv init -)"
 
-export EDITOR=/usr/local/bin/vim
-export VISUAL=/usr/local/bin/vim
+export EDITOR=/usr/local/bin/nvim
+export VISUAL=/usr/local/bin/nvim
 
 bindkey '^k' history-search-backward
 bindkey '^j' history-search-forward
