@@ -33,12 +33,8 @@ set lazyredraw
 set wildmenu
 set wildmode=longest:full,full
 
-" Increment / Decrement numbers
-:nnoremap + <C-a>
-:nnoremap - <C-x>
-
 " Quick ESC
-imap kj <ESC>
+" imap kj <ESC>
 
 " Buffer switching
 " ================

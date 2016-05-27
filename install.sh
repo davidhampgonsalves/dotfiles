@@ -85,7 +85,7 @@ installPkg() {
     if $1 list  | grep -q "^${pkg}"; then
       echo "  package '$pkg' is already installed"
     else
-      eval $1 install $pkg 
+      eval $1 install $pkg
     fi
   done
 }
@@ -93,10 +93,6 @@ installPkg() {
 
 echo "things you need to do:"
 echo "======================"
-echo "  1) map esc/ctrl to caps lock"
-echo "    1.1) Launch Seil and map caps lock to f19 (80)"
-echo "    1.2) Launch Karabiner and select F19 escape/control keys"
-echo "    1.2) Under system prefs > keyboard > modifier keys > set caps lock to no op"
 echo "  2) config iterm2 to use solorized color palate"
 echo "  3) add ssh public key to github. Its in your paste buffer"
 
