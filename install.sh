@@ -11,7 +11,7 @@ echo "installing pkgs with brew/cask"
 installPkg "brew cask" "transmission google-chrome vlc iterm2 sublime-text nosleep flux ctags java caskroom/versions/firefoxdeveloperedition"
 echo "installing pkgs with brew"
 brew tap neovim/homebrew-neovim
-installPkg "brew" "vim nvim zsh tmux wget tree htop nodejs go leiningen icdiff direnv coreutils direnv rbenv aspell ant"
+installPkg "brew" "vim neovim/neovim/neovim zsh tmux wget tree htop nodejs go leiningen icdiff direnv coreutils direnv rbenv aspell ant"
 
 # start rbenv so gems go in the right place
 rbenv init -
