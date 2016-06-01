@@ -9,4 +9,4 @@ for filePath in $PWD/\,*; do
   ln -s -f  $filePath $HOME/${fileName/\,/.}
 done
 
-git config --global core.excludesfile ~/.gitignore_global
+ln -s -f ${0:a:h}'/nvim-init.vim' $HOME/.config/nvim/init.vim

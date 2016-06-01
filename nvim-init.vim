@@ -42,7 +42,7 @@ map <Leader>a :bprev<Return>
 map <Leader>s :bnext<Return>
 
 nmap <C-l> :bnext<cr>
-nmap <C-h> :bprevious<cr>
+nmap <C-g> :bprevious<cr>
 
 " yank stack
 " ==========
@@ -61,7 +61,6 @@ omap f <Plug>Sneak_s
 set noshowmode
 set laststatus=2
 set ttimeoutlen=50
-let g:airline_theme = 'wombat'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline_left_sep=''
@@ -74,7 +73,6 @@ let g:airline_section_z="%{gutentags#statusline()}"
 
 " ctrl-p
 " ======
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 set wildignore+=*/vendor/*,*/node_modules/*,*.so,*.swp,*.zip
 
 " glutentags

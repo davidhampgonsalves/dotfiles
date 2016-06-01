@@ -13,19 +13,9 @@ echo "installing pkgs with brew"
 brew tap neovim/homebrew-neovim
 installPkg "brew" "vim neovim/neovim/neovim zsh tmux wget tree htop nodejs go leiningen icdiff direnv coreutils direnv rbenv aspell ant"
 
-# start rbenv so gems go in the right place
-rbenv init -
-echo "installing gems"
-installPkg "gem" "bundle"
-
-# setup tmuxinator
-wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh
-mv tmuxinator.zsh ,tmuxinator.zsh
-
+~/.config/nvim/init.vim
 # install vim-plug
-mkdir -p ~/.vim/autoload
-curl -fLo ~/.vim/autoload/plug.vim \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # setup glutentags folder
 mkdir ~/.tag-cache
@@ -55,10 +45,13 @@ cd ..
 
 ./link.sh
 
+
+git config --global core.excludesfile ~/.gitignore_global
+
 # generate pub/private key, copy to clipboard and prompt to add to github
-echo "generating ssh keypair"
-ssh-keygen -t rsa
-pbcopy < ~/.ssh/id_rsa.pub
+# echo "generating ssh keypair"
+# ssh-keygen -t rsa
+# pbcopy < ~/.ssh/id_rsa.pub
 
 # transmission settings
 defaults write org.m0k.transmission DeleteOriginalTorrent  1
@@ -67,18 +60,7 @@ defaults write org.m0k.transmission DownloadLocationConstant 1
 defaults write org.m0k.transmission NSNavLastRootDirectory "~/Downloads"
 
 mkdir ~/repos
-mkdir ~/projects
-
-# generate pub/private key, copy to clipboard and prompt to add to github
-echo "generating ssh keypair"
-ssh-keygen -t rsa
-pbcopy < ~/.ssh/id_rsa.pub
-
- generate pub/private key, copy to clipboard and prompt to add to github
-echo "generating ssh keypair"
-ssh-keygen -t rsa
-pbcopy < ~/.ssh/id_rsa.pub
-
+mkdir ~/work
 
 installPkg() {
   for pkg in $2; do
@@ -93,6 +75,6 @@ installPkg() {
 
 echo "things you need to do:"
 echo "======================"
-echo "  2) config iterm2 to use solorized color palate"
-echo "  3) add ssh public key to github. Its in your paste buffer"
+echo "  1) config iterm2 to use solorized color palate"
+# echo "  3) add ssh public key to github. Its in your paste buffer"
 
