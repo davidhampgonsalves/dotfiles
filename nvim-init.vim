@@ -42,7 +42,7 @@ map <Leader>a :bprev<Return>
 map <Leader>s :bnext<Return>
 
 nmap <C-l> :bnext<cr>
-nmap <C-g> :bprevious<cr>
+nmap <C-h> :bprevious<cr>
 
 " yank stack
 " ==========
