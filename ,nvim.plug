@@ -1,7 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'kien/ctrlp.vim'
-Plug 'FelikZ/ctrlp-py-matcher'
+Plug '/usr/local/opt/fzf'
 Plug 'vim-scripts/DeleteTrailingWhitespace'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'

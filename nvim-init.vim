@@ -71,9 +71,9 @@ let g:airline_section_x=""
 let g:airline_section_y=""
 let g:airline_section_z="%{gutentags#statusline()}"
 
-" ctrl-p
+" FZF
 " ======
-set wildignore+=*/vendor/*,*/node_modules/*,*.so,*.swp,*.zip
+nmap <C-p> :FZF<cr>
 
 " glutentags
 " ==========

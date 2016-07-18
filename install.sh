@@ -4,14 +4,15 @@
 rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install caskroom/cask/brew-cask
+brew tap caskroom/fonts
 brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 
 # install some apps
 echo "installing pkgs with brew/cask"
-installPkg "brew cask" "transmission google-chrome vlc iterm2 sublime-text nosleep flux ctags java caskroom/versions/firefoxdeveloperedition"
+installPkg "brew cask" "transmission google-chrome vlc iterm2 sublime-text nosleep flux ctags java caskroom/versions/firefoxdeveloperedition font-source-code-pro"
 echo "installing pkgs with brew"
 brew tap neovim/homebrew-neovim
-installPkg "brew" "vim neovim/neovim/neovim zsh tmux wget tree htop nodejs go leiningen icdiff direnv coreutils direnv rbenv aspell ant"
+installPkg "brew" "vim neovim/neovim/neovim zsh tmux wget tree htop nodejs go leiningen icdiff direnv coreutils direnv rbenv aspell ant, fzf"
 
 ~/.config/nvim/init.vim
 # install vim-plug
@@ -76,5 +77,5 @@ installPkg() {
 echo "things you need to do:"
 echo "======================"
 echo "  1) config iterm2 to use solorized color palate"
-# echo "  3) add ssh public key to github. Its in your paste buffer"
+echo "  2) setup GPG/SSH keys git config --global user.signingkey 44C4AF3D"
 
