@@ -4,7 +4,7 @@
 	signingkey = 44C4AF3D
 
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = /Users/david/.gitignore_global
 
 [web]

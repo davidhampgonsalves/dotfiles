@@ -4,16 +4,13 @@ let mapleader=" "
 
 set backspace=indent,eol,start
 
-color 0x7A69_dark
-
 set number
 set relativenumber
 
-set cursorline
+" set cursorline
 set expandtab
 set modelines=0
 set clipboard=unnamed
-set encoding=utf-8
 set tabstop=2
 set nowrap
 set nowritebackup
@@ -30,11 +27,18 @@ set softtabstop=2
 set ttyfast
 set lazyredraw
 
+set synmaxcol=256 " disable syntax highlighting after 128 chars
+
 set wildmenu
 set wildmode=longest:full,full
 
-" Quick ESC
-" imap kj <ESC>
+hi StatusLine ctermfg=black
+set statusline=
+set statusline+=\ \ %f
+set statusline+=\ »\ %{fugitive#statusline()}
+set statusline+=%=
+set statusline+=\ %c
+set statusline+=\ %h%m%r%w
 
 " Buffer switching
 " ================
@@ -50,32 +54,17 @@ let g:yankstack_map_keys = 0
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
-" sneek
+" Sneek
 " =====
 nmap f <Plug>Sneak_s
 xmap f <Plug>Sneak_s
 omap f <Plug>Sneak_s
 
-" airline
-" =======
-set noshowmode
-set laststatus=2
-set ttimeoutlen=50
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#branch#enabled = 1
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline_section_b="%f"
-let g:airline_section_c=""
-let g:airline_section_x=""
-let g:airline_section_y=""
-let g:airline_section_z="%{gutentags#statusline()}"
-
 " FZF
 " ======
 nmap <C-p> :FZF<cr>
 
-" glutentags
+" Gutentags
 " ==========
 let g:gutentags_cache_dir=expand('~/.tag-cache')
 

@@ -42,6 +42,8 @@ defaults write -g com.apple.mouse.scaling 3
 defaults write com.apple.screensaver askForPassword -int 0
 defaults write com.apple.screensaver askForPasswordDelay -int 30
 sudo systemsetup -setcomputersleep 15 > /dev/null
+# Disabe the webview and open captive wifi spots in default browser
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -boolean false
 cd ..
 
 ./link.sh

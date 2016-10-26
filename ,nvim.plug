@@ -4,12 +4,8 @@ Plug '/usr/local/opt/fzf'
 Plug 'vim-scripts/DeleteTrailingWhitespace'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'flazz/vim-colorschemes'
 Plug 'maxbrunsfeld/vim-yankstack'
-Plug 'justinmk/vim-sneak'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'bling/vim-airline'
-Plug 'sotte/presenting.vim'
+Plug 'weynhamz/vim-plugin-minibufexpl'
 
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'luochen1990/rainbow', { 'for': 'clojure' }
