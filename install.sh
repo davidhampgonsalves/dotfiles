@@ -8,6 +8,15 @@ brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 
 # install some apps
 echo "# Installing Packages"
+function installPkg {
+  for pkg in $2; do
+    if $1 list  | grep -q "^${pkg}"; then
+      echo "  package '$pkg' is already installed"
+    else
+      eval $1 install $pkg
+    fi
+  done
+}
 installPkg "brew cask" "transmission google-chrome vlc iterm2 flux ctags java font-source-code-pro slack"
 installPkg "brew" "neovim/neovim/neovim zsh tmux tree htop nodejs go leiningen coreutils rbenv fzf tmate postgres redis"
 
@@ -15,9 +24,8 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | b
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # setup glutentags folder
-mkdir ~/.tag-cache
-mkdir ~/repos
-mkdir ~/work
+mkdir -p ~/.tag-cache
+mkdir -p ~/repos ~/work
 
 chsh -s /bin/zsh
 touch ~/.zsh.user.zsh
@@ -39,27 +47,11 @@ cd ..
 
 git config --global core.excludesfile ~/.gitignore_global
 
-# generate pub/private key, copy to clipboard and prompt to add to github
-# echo "generating ssh keypair"
-# ssh-keygen -t rsa
-# pbcopy < ~/.ssh/id_rsa.pub
-
 # transmission settings
 defaults write org.m0k.transmission DeleteOriginalTorrent  1
 defaults write org.m0k.transmission DownloadAsk 0
 defaults write org.m0k.transmission DownloadLocationConstant 1
 defaults write org.m0k.transmission NSNavLastRootDirectory "~/Downloads"
-
-installPkg() {
-  for pkg in $2; do
-    if $1 list  | grep -q "^${pkg}"; then
-      echo "  package '$pkg' is already installed"
-    else
-      eval $1 install $pkg
-    fi
-  done
-}
-
 
 echo "things you need to do:"
 echo "======================"
