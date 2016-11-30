@@ -35,10 +35,12 @@ set wildmode=longest:full,full
 hi StatusLine ctermfg=black
 set statusline=
 set statusline+=\ \ %f
-set statusline+=\ »\ %{fugitive#statusline()}
+"set statusline+=\ »\ %{fugitive#statusline()}
 set statusline+=%=
 set statusline+=\ %c
 set statusline+=\ %h%m%r%w
+
+let mapleader = "\<Space>"
 
 " Buffer switching
 " ================
@@ -53,12 +55,6 @@ nmap <C-h> :bprevious<cr>
 let g:yankstack_map_keys = 0
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
-
-" Sneek
-" =====
-nmap f <Plug>Sneak_s
-xmap f <Plug>Sneak_s
-omap f <Plug>Sneak_s
 
 " FZF
 " ======

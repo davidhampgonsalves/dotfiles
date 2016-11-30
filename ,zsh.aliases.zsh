@@ -1,10 +1,9 @@
 hash -d r="$HOME/repos"
 hash -d w="$HOME/work"
 
-alias dm='docker-machine'
-
 # mdfind in current director omitting excludes
 # ff () { mdfind -onlyin . $* | grep -v -f ~/.search-exclude.txt }
+alias ag='ag --path-to-ignore ~/.agignore'
 ff () { ag -l $* }
 
 # grep excluding common code library locations

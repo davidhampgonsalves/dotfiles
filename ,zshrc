@@ -27,7 +27,6 @@ export NVM_DIR="/Users/david/.nvm"
 # setup fzf and ag
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
-alias ag='ag --path-to-agignore ~/.agignore'
 
 # Set colors to match iTerm2 Terminal Colors
 export CLICOLOR=1
