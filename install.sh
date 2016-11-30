@@ -9,10 +9,10 @@ brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 
 # install some apps
 echo "installing pkgs with brew/cask"
-installPkg "brew cask" "transmission google-chrome vlc iterm2 sublime-text flux ctags java font-source-code-pro"
+installPkg "brew cask" "transmission google-chrome vlc iterm2 flux ctags java font-source-code-pro slack"
 echo "installing pkgs with brew"
 brew tap neovim/homebrew-neovim
-installPkg "brew" "vim neovim/neovim/neovim zsh tmux tree htop nodejs go leiningen coreutils rbenv fzf"
+installPkg "brew" "vim neovim/neovim/neovim zsh tmux tree htop nodejs go leiningen coreutils rbenv fzf tmate postgres redis"
 
 ~/.config/nvim/init.vim
 # install vim-plug
@@ -34,7 +34,7 @@ chsh -s /bin/zsh
 touch ~/.zsh.user.zsh
 
 # install mathiasbynens dotfile osx defaults
-git clone https://github.com/mathiasbynens/dotfiles.git mathiasbynens-dotfiles  && cd mathiasbynens-dotfiles && ./.osx
+git clone https://github.com/mathiasbynens/dotfiles.git mathiasbynens-dotfiles  && cd mathiasbynens-dotfiles && ./.macos
 # revert some of those defaults
 defaults write com.googlecode.iterm2 AlternateMouseScroll -bool true
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
@@ -47,7 +47,6 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.c
 cd ..
 
 ./link.sh
-
 
 git config --global core.excludesfile ~/.gitignore_global
 
