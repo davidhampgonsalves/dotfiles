@@ -1,35 +1,24 @@
 #!/bin/bash
 
 # install home brew and cask
-rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew install caskroom/cask/brew-cask
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew tap caskroom/cask
 brew tap caskroom/fonts
 brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 
 # install some apps
-echo "installing pkgs with brew/cask"
+echo "# Installing Packages"
 installPkg "brew cask" "transmission google-chrome vlc iterm2 flux ctags java font-source-code-pro slack"
-echo "installing pkgs with brew"
-brew tap neovim/homebrew-neovim
-installPkg "brew" "vim neovim/neovim/neovim zsh tmux tree htop nodejs go leiningen coreutils rbenv fzf tmate postgres redis"
+installPkg "brew" "neovim/neovim/neovim zsh tmux tree htop nodejs go leiningen coreutils rbenv fzf tmate postgres redis"
 
-~/.config/nvim/init.vim
-# install vim-plug
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # setup glutentags folder
 mkdir ~/.tag-cache
+mkdir ~/repos
+mkdir ~/work
 
-# install prezto
-[[ ! -a ~/.prezto ]] {
-  echo "installing prezto"
-  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-  setopt EXTENDED_GLOB
-  for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-  done
-}
 chsh -s /bin/zsh
 touch ~/.zsh.user.zsh
 
@@ -60,9 +49,6 @@ defaults write org.m0k.transmission DeleteOriginalTorrent  1
 defaults write org.m0k.transmission DownloadAsk 0
 defaults write org.m0k.transmission DownloadLocationConstant 1
 defaults write org.m0k.transmission NSNavLastRootDirectory "~/Downloads"
-
-mkdir ~/repos
-mkdir ~/work
 
 installPkg() {
   for pkg in $2; do
