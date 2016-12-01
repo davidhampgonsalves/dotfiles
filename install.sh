@@ -18,7 +18,7 @@ function installPkg {
   done
 }
 installPkg "brew cask" "transmission google-chrome vlc iterm2 flux ctags java font-source-code-pro slack screenhero harvest"
-installPkg "brew" "neovim/neovim/neovim zsh tmux tree htop nodejs go leiningen coreutils rbenv fzf ag tmate postgres redis"
+installPkg "brew" "neovim/neovim/neovim zsh tmux tree htop nodejs go leiningen coreutils rbenv fzf ag tmate postgres redis reattach-to-user-namespace"
 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

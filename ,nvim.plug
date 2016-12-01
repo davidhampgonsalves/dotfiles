@@ -5,6 +5,7 @@ Plug 'vim-scripts/DeleteTrailingWhitespace'
 Plug 'airblade/vim-gitgutter'
 Plug 'weynhamz/vim-plugin-minibufexpl'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'maxbrunsfeld/vim-yankstack'
 
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'luochen1990/rainbow', { 'for': 'clojure' }

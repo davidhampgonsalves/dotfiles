@@ -6,6 +6,8 @@ antibody bundle subnixr/minimal
 
 ZSH_THEME="minimal"
 
+setopt autocd
+
 # set java home
 export JAVA_HOME="$(/usr/libexec/java_home)"
 
