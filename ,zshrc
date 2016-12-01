@@ -1,19 +1,23 @@
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+source <(antibody init)
+
+antibody bundle zsh-users/zsh-syntax-highlighting
+antibody bundle mafredri/zsh-async
+antibody bundle subnixr/minimal
+
+ZSH_THEME="minimal"
 
 # set java home
 export JAVA_HOME="$(/usr/libexec/java_home)"
-export DISABLE_SPRING=true
 
 eval $(ssh-agent)
-eval "$(direnv hook zsh)"
 
 eval "$(rbenv init -)"
 
 export EDITOR=/usr/local/bin/nvim
 export VISUAL=/usr/local/bin/nvim
+
+setopt inc_append_history
+setopt share_history
 
 bindkey '^k' history-search-backward
 bindkey '^j' history-search-forward
@@ -28,6 +32,22 @@ export NVM_DIR="/Users/david/.nvm"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
 
-# Set colors to match iTerm2 Terminal Colors
-export CLICOLOR=1
-export TERM=xterm-256color
+autoload -Uz compinit
+compinit
+
+zstyle ":completion:*" auto-description "specify: %d"
+zstyle ":completion:*" completer _expand _complete _correct _approximate
+zstyle ":completion:*" format "Completing %d"
+zstyle ":completion:*" group-name ""
+zstyle ":completion:*" menu select=2
+zstyle ":completion:*:default" list-colors ${(s.:.)LS_COLORS}
+zstyle ":completion:*" list-colors ""
+zstyle ":completion:*" list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ":completion:*" matcher-list "" "m:{a-z}={A-Z}" "m:{a-zA-Z}={A-Za-z}" "r:|[._-]=* r:|=* l:|=*"
+zstyle ":completion:*" menu select=long
+zstyle ":completion:*" select-prompt %SScrolling active: current selection at %p%s
+zstyle ":completion:*" verbose true
+
+zstyle ":completion:*:*:kill:*:processes" list-colors "=(#b) #([0-9]#)*=0=01;31"
+zstyle ":completion:*:kill:*" command "ps -u $USER -o pid,%cpu,tty,cputime,cmd"
+

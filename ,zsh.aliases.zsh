@@ -9,6 +9,11 @@ ff () { ag -l $* }
 # grep excluding common code library locations
 ffg () { grep -R -I --exclude-dir=vendor/bundle/ --exclude-dir=node_modules/ $* . }
 
+alias e=nvim
+
+alias g=git
+alias gcm='git commit --message'
+
 # postgres start / stop
 alias postgres.start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias postgres.stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
