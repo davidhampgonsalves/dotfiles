@@ -10,6 +10,7 @@ ff () { ag -l $* }
 ffg () { grep -R -I --exclude-dir=vendor/bundle/ --exclude-dir=node_modules/ $* . }
 
 alias e=nvim
+alias t=tmux
 
 alias g=git
 alias gcm='git commit --message'

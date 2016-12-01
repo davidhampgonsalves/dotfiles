@@ -2,9 +2,10 @@
 
 # install home brew and cask
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 brew tap caskroom/cask
 brew tap caskroom/fonts
-brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
+brew tap getantibody/homebrew-antibody
 
 # install some apps
 echo "# Installing Packages"
@@ -18,13 +19,17 @@ function installPkg {
   done
 }
 installPkg "brew cask" "transmission google-chrome vlc iterm2 flux ctags java font-source-code-pro slack screenhero harvest"
-installPkg "brew" "neovim/neovim/neovim zsh tmux tree htop nodejs go leiningen coreutils rbenv fzf ag tmate postgres redis reattach-to-user-namespace"
+installPkg "brew" "neovim/neovim/neovim zsh antibody tmux tree htop nodejs go leiningen coreutils rbenv fzf ag tmate postgres redis reattach-to-user-namespace"
 
+# NVM
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+# VIM PLUG
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# setup glutentags folder
+# For Glutentags
 mkdir -p ~/.tag-cache
+
+# Setup Dirs
 mkdir -p ~/repos ~/work
 
 chsh -s /bin/zsh
@@ -32,8 +37,11 @@ touch ~/.zsh.user.zsh
 
 /usr/local/opt/fzf/install
 
-# install mathiasbynens dotfile osx defaults
-git clone https://github.com/mathiasbynens/dotfiles.git mathiasbynens-dotfiles  && cd mathiasbynens-dotfiles && ./.macos
+git submodule init
+
+cd mathiasbynens-dotfiles && ./.macos
+cd ..
+
 # revert some of those defaults
 defaults write com.googlecode.iterm2 AlternateMouseScroll -bool true
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
@@ -42,10 +50,8 @@ defaults write com.apple.screensaver askForPassword -int 0
 defaults write com.apple.screensaver askForPasswordDelay -int 30
 sudo systemsetup -setcomputersleep 15 > /dev/null
 defaults write NSGlobalDomain KeyRepeat -int 0
-
 # Disabe the webview and open captive wifi spots in default browser
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -boolean false
-cd ..
 
 ./link.sh
 
@@ -59,6 +65,9 @@ defaults write org.m0k.transmission NSNavLastRootDirectory "~/Downloads"
 
 echo "things you need to do:"
 echo "======================"
-echo "  1) config iterm2 to use solorized color palate"
-echo "  2) setup GPG/SSH keys git config --global user.signingkey 44C4AF3D"
+echo "  config iterm2 to use color scheme"
+echo "  copy over ssh keys or generate new ones"
+echo "  caps-lock to ctrl in keyboard settings"
+#echo "  setup GPG/SSH keys git config --global user.signingkey 44C4AF3D"
+
 
