@@ -19,10 +19,8 @@ function installPkg {
   done
 }
 installPkg "brew cask" "transmission google-chrome vlc iterm2 flux ctags java font-source-code-pro slack screenhero harvest"
-installPkg "brew" "neovim/neovim/neovim zsh antibody tmux tree htop nodejs go leiningen coreutils rbenv fzf ag tmate postgres redis reattach-to-user-namespace"
+installPkg "brew" "neovim/neovim/neovim zsh antibody tmux tree htop nodejs go leiningen coreutils rbenv fzf ag tmate postgres redis reattach-to-user-namespace n heroku"
 
-# NVM
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
 # VIM PLUG
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -68,6 +66,7 @@ echo "======================"
 echo "  config iterm2 to use color scheme"
 echo "  copy over ssh keys or generate new ones"
 echo "  caps-lock to ctrl in keyboard settings"
+echo "  run :PlugInstall in neovim"
 #echo "  setup GPG/SSH keys git config --global user.signingkey 44C4AF3D"
 
 

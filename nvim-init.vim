@@ -27,12 +27,13 @@ set softtabstop=2
 set ttyfast
 set lazyredraw
 
-set synmaxcol=256 " disable syntax highlighting after 128 chars
+set synmaxcol=512 " disable syntax highlighting after 128 chars
 
 set wildmenu
 set wildmode=longest:full,full
 
-hi StatusLine ctermfg=black
+"hi StatusLine ctermfg=black
+highlight StatusLine NONE ctermbg=LightGrey ctermfg=Black cterm=NONE
 set statusline=
 set statusline+=\ \ %f
 "set statusline+=\ »\ %{fugitive#statusline()}

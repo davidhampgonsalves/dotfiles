@@ -1,3 +1,5 @@
+MINIMAL_MAGIC_ENTER="I Don't want this"
+
 source <(antibody init)
 
 antibody bundle zsh-users/zsh-syntax-highlighting
@@ -18,8 +20,13 @@ eval "$(rbenv init -)"
 export EDITOR=/usr/local/bin/nvim
 export VISUAL=/usr/local/bin/nvim
 
-setopt inc_append_history
-setopt share_history
+HISTSIZE=5000               #How many lines of history to keep in memory
+HISTFILE=~/.zsh_history     #Where to save history to disk
+SAVEHIST=5000               #Number of history entries to save to disk
+HISTDUP=erase               #Erase duplicates in the history file
+setopt    appendhistory     #Append history to the history file (no overwriting)
+setopt    sharehistory      #Share history across terminals
+setopt    incappendhistory
 
 bindkey '^k' history-search-backward
 bindkey '^j' history-search-forward
