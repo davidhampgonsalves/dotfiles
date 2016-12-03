@@ -4,9 +4,7 @@ source <(antibody init)
 
 antibody bundle zsh-users/zsh-syntax-highlighting
 antibody bundle mafredri/zsh-async
-antibody bundle subnixr/minimal
-
-ZSH_THEME="minimal"
+antibody bundle sindresorhus/pure
 
 setopt autocd
 

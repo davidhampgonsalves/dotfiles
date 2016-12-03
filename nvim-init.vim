@@ -45,8 +45,8 @@ let mapleader = "\<Space>"
 
 " Buffer switching
 " ================
-nmap <C-l> :bnext<cr>
-nmap <C-h> :bprevious<cr>
+nmap <C-n> :bnext<cr>
+nmap <C-m> :bprevious<cr>
 
 " yank stack
 " ==========
@@ -66,3 +66,11 @@ let g:gutentags_cache_dir=expand('~/.tag-cache')
 " =================
 let blacklist = ['md']
 autocmd BufWritePre * if index(blacklist, &ft) < 0 | :DeleteTrailingWhitespace
+
+" Terminal
+" ========
+:tnoremap <C-h> <C-\><C-n><C-w>h
+:tnoremap <C-j> <C-\><C-n><C-w>j
+:tnoremap <C-k> <C-\><C-n><C-w>k
+:tnoremap <C-l> <C-\><C-n><C-w>l
+:au BufEnter * if &buftype == 'terminal' | :startinsert | endif

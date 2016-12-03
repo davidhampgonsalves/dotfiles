@@ -6,6 +6,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'weynhamz/vim-plugin-minibufexpl'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'luochen1990/rainbow', { 'for': 'clojure' }
