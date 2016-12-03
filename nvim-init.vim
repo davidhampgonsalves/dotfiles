@@ -26,17 +26,19 @@ set shiftwidth=2
 set softtabstop=2
 set ttyfast
 set lazyredraw
+set splitbelow
+set splitright
 
 set synmaxcol=512 " disable syntax highlighting after 128 chars
 
 set wildmenu
 set wildmode=longest:full,full
 
-"hi StatusLine ctermfg=black
-highlight StatusLine NONE ctermbg=LightGrey ctermfg=Black cterm=NONE
+hi StatusLine ctermfg=black
+highlight StatusLine NONE ctermbg=Black ctermfg=White cterm=NONE
 set statusline=
 set statusline+=\ \ %f
-"set statusline+=\ »\ %{fugitive#statusline()}
+set statusline+=\ »\ %{fugitive#statusline()}
 set statusline+=%=
 set statusline+=\ %c
 set statusline+=\ %h%m%r%w
@@ -69,8 +71,17 @@ autocmd BufWritePre * if index(blacklist, &ft) < 0 | :DeleteTrailingWhitespace
 
 " Terminal
 " ========
-:tnoremap <C-h> <C-\><C-n><C-w>h
-:tnoremap <C-j> <C-\><C-n><C-w>j
-:tnoremap <C-k> <C-\><C-n><C-w>k
-:tnoremap <C-l> <C-\><C-n><C-w>l
-:au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+":tnoremap <C-h> <C-\><C-n><C-w>h
+":tnoremap <C-j> <C-\><C-n><C-w>j
+":tnoremap <C-k> <C-\><C-n><C-w>k
+":tnoremap <C-l> <C-\><C-n><C-w>l
+":au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+
+
+"" Movement doens't apply in fzf
+"" ============================
+":au FileType fzf :tnoremap <buffer> <C-J> <C-W><C-J>
+":au FileType fzf :tnoremap <buffer> <C-k> <C-W><C-k>
+
+" View commits in fzf
+nmap <Leader>c :Commits<cr>

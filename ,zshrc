@@ -1,5 +1,3 @@
-MINIMAL_MAGIC_ENTER="I Don't want this"
-
 source <(antibody init)
 
 antibody bundle zsh-users/zsh-syntax-highlighting
