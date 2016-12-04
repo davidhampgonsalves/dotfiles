@@ -24,8 +24,8 @@ setopt    appendhistory     #Append history to the history file (no overwriting)
 setopt    sharehistory      #Share history across terminals
 setopt    incappendhistory
 
-bindkey '^k' history-search-backward
-bindkey '^j' history-search-forward
+bindkey '^P' history-beginning-search-backward
+bindkey '^N' history-beginning-search-forward
 
 source ~/.zsh.user.zsh
 source ~/.zsh.aliases.zsh
@@ -35,8 +35,10 @@ export NVM_DIR="/Users/david/.nvm"
 
 # setup fzf and ag
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='ag -l -g ""'
+export FZF_DEFAULT_COMMAND='ag -l -g "" --ignore node_module'
+export FZF_DEFAULT_OPTS='--bind ctrl-j:down,ctrl-k:up'
 
+# zsh completion settings
 autoload -Uz compinit
 compinit
 

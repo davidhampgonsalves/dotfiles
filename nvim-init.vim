@@ -2,6 +2,8 @@ source ~/.nvim.plug
 
 let mapleader=" "
 
+color dracula
+
 set backspace=indent,eol,start
 
 set number

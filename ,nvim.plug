@@ -8,6 +8,7 @@ Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'dracula/vim'
 
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'luochen1990/rainbow', { 'for': 'clojure' }

@@ -18,7 +18,7 @@ function installPkg {
     fi
   done
 }
-installPkg "brew cask" "transmission google-chrome vlc iterm2 flux ctags java font-source-code-pro slack screenhero harvest"
+installPkg "brew cask" "transmission google-chrome vlc flux ctags java font-source-code-pro slack screenhero harvest"
 installPkg "brew" "neovim/neovim/neovim zsh antibody tmux tree htop nodejs go leiningen coreutils rbenv fzf ag tmate postgres redis reattach-to-user-namespace n heroku"
 
 # VIM PLUG
