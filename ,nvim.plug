@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/plugged')
 
-Plug '/usr/local/opt/fzf'
 Plug 'vim-scripts/DeleteTrailingWhitespace'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -9,6 +8,8 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dracula/vim'
+" Plug 'ap/vim-buftabline'
+Plug 'scrooloose/nerdcommenter'
 
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'luochen1990/rainbow', { 'for': 'clojure' }
@@ -16,7 +17,6 @@ Plug 'luochen1990/rainbow', { 'for': 'clojure' }
 " Not super happy with the following
 " Plug 'tpope/vim-commentary'
 " Plug 'weynhamz/vim-plugin-minibufexpl'
-Plug 'scrooloose/nerdcommenter'
 
 " Using git URL
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'

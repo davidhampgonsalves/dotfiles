@@ -9,7 +9,7 @@ set backspace=indent,eol,start
 set number
 set relativenumber
 
-" set cursorline
+set cursorline
 set expandtab
 set modelines=0
 set clipboard=unnamed
@@ -36,11 +36,17 @@ set synmaxcol=512 " disable syntax highlighting after 128 chars
 set wildmenu
 set wildmode=longest:full,full
 
-hi StatusLine ctermfg=black
-highlight StatusLine NONE ctermbg=Black ctermfg=White cterm=NONE
+":hi CursorLine ctermbg=darkred
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
+
+highlight StatusLine NONE ctermbg=Black ctermfg=LightGreen
 set statusline=
 set statusline+=\ \ %f
-set statusline+=\ »\ %{fugitive#statusline()}
+"set statusline+=\ »\ %{fugitive#statusline()}
 set statusline+=%=
 set statusline+=\ %c
 set statusline+=\ %h%m%r%w
@@ -61,6 +67,7 @@ nmap <leader>P <Plug>yankstack_substitute_newer_paste
 " FZF
 " ======
 nmap <C-p> :FZF<cr>
+nmap <C-b> :Buffers<cr>
 
 " Gutentags
 " ==========
@@ -73,17 +80,13 @@ autocmd BufWritePre * if index(blacklist, &ft) < 0 | :DeleteTrailingWhitespace
 
 " Terminal
 " ========
-":tnoremap <C-h> <C-\><C-n><C-w>h
-":tnoremap <C-j> <C-\><C-n><C-w>j
-":tnoremap <C-k> <C-\><C-n><C-w>k
-":tnoremap <C-l> <C-\><C-n><C-w>l
-":au BufEnter * if &buftype == 'terminal' | :startinsert | endif
-
+:tnoremap <C-h> <C-\><C-n><C-w>h
+:tnoremap <C-j> <C-\><C-n><C-w>j
+:tnoremap <C-k> <C-\><C-n><C-w>k
+:tnoremap <C-l> <C-\><C-n><C-w>l
+:au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
 "" Movement doens't apply in fzf
 "" ============================
-":au FileType fzf :tnoremap <buffer> <C-J> <C-W><C-J>
-":au FileType fzf :tnoremap <buffer> <C-k> <C-W><C-k>
-
-" View commits in fzf
-nmap <Leader>c :Commits<cr>
+:au FileType fzf :tnoremap <buffer> <C-J> <C-W><C-J>
+:au FileType fzf :tnoremap <buffer> <C-k> <C-W><C-k>

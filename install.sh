@@ -63,10 +63,11 @@ defaults write org.m0k.transmission NSNavLastRootDirectory "~/Downloads"
 
 echo "things you need to do:"
 echo "======================"
-echo "  config iterm2 to use color scheme"
+echo "  config terminal.app to use dracula"
 echo "  copy over ssh keys or generate new ones"
 echo "  caps-lock to ctrl in keyboard settings"
 echo "  run :PlugInstall in neovim"
+echo "  slack dracula color scheme"
 #echo "  setup GPG/SSH keys git config --global user.signingkey 44C4AF3D"
 
 
