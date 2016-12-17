@@ -85,8 +85,7 @@ autocmd BufWritePre * if index(blacklist, &ft) < 0 | :DeleteTrailingWhitespace
 :tnoremap <C-k> <C-\><C-n><C-w>k
 :tnoremap <C-l> <C-\><C-n><C-w>l
 :au BufEnter * if &buftype == 'terminal' | :startinsert | endif
-
-"" Movement doens't apply in fzf
-"" ============================
+:autocmd TermOpen * setlocal statusline=%{b:term_title}
+" Movement doens't apply in fzf
 :au FileType fzf :tnoremap <buffer> <C-J> <C-W><C-J>
 :au FileType fzf :tnoremap <buffer> <C-k> <C-W><C-k>
