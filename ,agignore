@@ -12,9 +12,7 @@
 *.tsv
 *.tmp*
 *.css
-*.scss
 *.old
-*.json
 *.xml
 *.plist
 *.pdf
