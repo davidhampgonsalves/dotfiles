@@ -43,6 +43,10 @@ augroup CursorLine
   au WinLeave * setlocal nocursorline
 augroup END
 
+" Spell check enabled for markdown files
+au BufRead *.md setlocal spell
+au BufRead *.markdown setlocal spell
+
 highlight StatusLine NONE ctermbg=Black ctermfg=LightGreen
 set statusline=
 set statusline+=\ \ %f
