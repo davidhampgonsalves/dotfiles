@@ -1,6 +1,6 @@
 Dotfiles
 ========
-NeoVim + FZF + ZSH + Terminal.app
+NeoVim + FZF + ZSH + TMATE + Terminal.app
 
 ```
 Homebrew for package management.

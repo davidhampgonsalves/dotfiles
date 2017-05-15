@@ -11,7 +11,7 @@ Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'scrooloose/nerdcommenter'
 Plug 'nelstrom/vim-visual-star-search'
-
-" Plug 'ap/vim-buftabline'
+Plug 'othree/vim-jsx'
+Plug 'pangloss/vim-javascript'
 
 call plug#end()

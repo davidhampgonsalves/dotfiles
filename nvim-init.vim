@@ -93,3 +93,7 @@ autocmd BufWritePre * if index(blacklist, &ft) < 0 | :DeleteTrailingWhitespace
 " Movement doens't apply in fzf
 :au FileType fzf :tnoremap <buffer> <C-J> <C-W><C-J>
 :au FileType fzf :tnoremap <buffer> <C-k> <C-W><C-k>
+
+
+" JSX
+:let g:jsx_ext_required = 0
