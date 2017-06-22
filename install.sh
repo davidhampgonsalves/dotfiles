@@ -19,7 +19,7 @@ function installPkg {
   done
 }
 installPkg "brew cask" "transmission google-chrome vlc flux ctags java font-source-code-pro slack screenhero harvest music-manager"
-installPkg "brew" "neovim/neovim/neovim zsh antibody tmux tree htop go leiningen coreutils rbenv fzf ag tmate postgres redis reattach-to-user-namespace n yarn heroku"
+installPkg "brew" "neovim/neovim/neovim zsh antibody tmux tree htop go leiningen coreutils rbenv fzf ag tmate postgres redis reattach-to-user-namespace n yarn heroku flycut"
 
 # VIM PLUG
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

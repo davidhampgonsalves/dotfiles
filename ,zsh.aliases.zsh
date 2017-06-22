@@ -3,6 +3,7 @@ hash -d w="$HOME/work"
 
 alias ag='ag --path-to-ignore ~/.agignore'
 ff () { ag -l $* }
+fff () { ag $* }
 
 # grep excluding common code library locations
 ffg () { grep -R -I --exclude-dir=vendor/bundle/ --exclude-dir=node_modules/ $* . }
@@ -12,6 +13,7 @@ alias t=tmux
 
 alias g=git
 alias gcm='git commit --message'
+alias gca='git commit --amend'
 alias gco='git checkout'
 alias gs='git status'
 alias gb='git branch -a | fzf-tmux'
