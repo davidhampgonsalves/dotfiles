@@ -8,7 +8,6 @@ brew tap caskroom/fonts
 brew tap getantibody/homebrew-antibody
 
 # install some apps
-echo "# Installing Packages"
 function installPkg {
   for pkg in $2; do
     if $1 list  | grep -q "^${pkg}"; then
@@ -18,7 +17,9 @@ function installPkg {
     fi
   done
 }
-installPkg "brew cask" "transmission google-chrome vlc flux ctags java font-source-code-pro slack screenhero harvest music-manager"
+
+echo "# Installing Packages"
+installPkg "brew cask" "transmission google-chrome iina flux ctags java font-source-code-pro slack harvest spectacle"
 installPkg "brew" "neovim/neovim/neovim zsh antibody tmux tree htop go leiningen coreutils rbenv fzf ag tmate postgres redis reattach-to-user-namespace n yarn heroku flycut ripgrep"
 
 # Setup Dirs
@@ -51,7 +52,9 @@ defaults write -g com.apple.mouse.scaling 3
 defaults write com.apple.screensaver askForPassword -int 0
 defaults write com.apple.screensaver askForPasswordDelay -int 30
 sudo systemsetup -setcomputersleep 15 > /dev/null
-defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
 # Disabe the webview and open captive wifi spots in default browser
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -boolean false
 

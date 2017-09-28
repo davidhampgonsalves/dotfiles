@@ -35,3 +35,12 @@ Tmux for now, copy/paste complexity/issues are getting annoying.
 
 ## Terminal.app
 Avoid complexity of iTerm2 tmux integrations.
+
+# Install
+need to break this up, one script for brew + package install, one for linking, one of osx config
+
+all kicked off by a curl pointing at github that
+install git
+checkout repo to ~/r/dotfiles
+run scripts
+
