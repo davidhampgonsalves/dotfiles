@@ -10,10 +10,8 @@ set number
 set relativenumber
 
 set cursorline
-set expandtab
 set modelines=0
 set clipboard=unnamed
-set tabstop=2
 set nowrap
 set nowritebackup
 set noswapfile
@@ -23,13 +21,14 @@ set mouse=a     " Enable mouse usage (all modes)
 set ignorecase " case-insensitive searching
 set smartcase  " but become case-sensitive if you type uppercase characters
 set hlsearch   " highlight search matches
-set expandtab
-set shiftwidth=2
-set softtabstop=2
 set ttyfast
 set lazyredraw
 set splitbelow
 set splitright
+
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
 set synmaxcol=512 " disable syntax highlighting after 128 chars
 

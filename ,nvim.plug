@@ -11,5 +11,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'othree/vim-jsx'
 Plug 'pangloss/vim-javascript'
+Plug 'othree/eregex.vim'
 
 call plug#end()

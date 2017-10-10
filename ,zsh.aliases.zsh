@@ -5,9 +5,6 @@ alias ag='ag --path-to-ignore ~/.agignore'
 ff () { ag -l $* }
 fff () { ag $* }
 
-# grep excluding common code library locations
-ffg () { grep -R -I --exclude-dir=vendor/bundle/ --exclude-dir=node_modules/ $* . }
-
 alias e=nvim
 alias t=tmux
 
