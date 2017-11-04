@@ -35,7 +35,7 @@ export NVM_DIR="/Users/david/.nvm"
 
 # setup fzf and ag
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='ag -l -g "" --ignore node_module'
+export FZF_DEFAULT_COMMAND='rg --files --glob "!.git/*"'
 export FZF_DEFAULT_OPTS='--bind ctrl-j:down,ctrl-k:up'
 
 # zsh completion settings

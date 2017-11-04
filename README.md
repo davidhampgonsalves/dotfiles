@@ -7,6 +7,11 @@ Homebrew for package management.
 Draclua theme everywhere.
 ```
 
+## Install
+```
+bash <(curl -s https://raw.githubusercontent.com/davidhampgonsalves/dotfiles/master/install.sh)
+```
+
 ## NeoVim
 Vim Plug with just a few plugins (< 10 plugins).
 * Use FZF Buffers for quick nav (`Ctrl-B`).

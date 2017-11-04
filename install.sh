@@ -19,16 +19,19 @@ function installPkg {
   done
 }
 installPkg "brew cask" "transmission google-chrome vlc flux ctags java font-source-code-pro slack screenhero harvest music-manager"
-installPkg "brew" "neovim/neovim/neovim zsh antibody tmux tree htop go leiningen coreutils rbenv fzf ag tmate postgres redis reattach-to-user-namespace n yarn heroku flycut"
+installPkg "brew" "neovim/neovim/neovim zsh antibody tmux tree htop go leiningen coreutils rbenv fzf ag tmate postgres redis reattach-to-user-namespace n yarn heroku flycut ripgrep"
+
+# Setup Dirs
+mkdir -p ~/repos ~/work
+cd ~/repos
+git clone git@github.com:davidhampgonsalves/dotfiles.git
+cd dotfiles
 
 # VIM PLUG
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # For Glutentags
 mkdir -p ~/.tag-cache
-
-# Setup Dirs
-mkdir -p ~/repos ~/work
 
 chsh -s /bin/zsh
 touch ~/.zsh.user.zsh
