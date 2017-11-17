@@ -19,7 +19,7 @@ function installPkg {
 }
 
 echo "# Installing Packages"
-installPkg "brew cask" "transmission google-chrome iina flux ctags java font-source-code-pro slack harvest spectacle"
+installPkg "brew cask" "transmission google-chrome iina flux ctags java font-source-code-pro slack harvest spectacle authy-desktop"
 installPkg "brew" "neovim/neovim/neovim zsh antibody tmux tree htop go leiningen coreutils rbenv fzf ag tmate postgres redis reattach-to-user-namespace n yarn heroku flycut ripgrep"
 
 # Setup Dirs
@@ -53,7 +53,7 @@ defaults write com.apple.screensaver askForPassword -int 0
 defaults write com.apple.screensaver askForPasswordDelay -int 30
 sudo systemsetup -setcomputersleep 15 > /dev/null
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain KeyRepeat -int 0.8
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 # Disabe the webview and open captive wifi spots in default browser
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -boolean false
