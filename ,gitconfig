@@ -1,7 +1,7 @@
 [user]
 	name = David Hamp-Gonsalves
 	email = davidhampgonsalves@gmail.com
-	signingkey = 44C4AF3D
+	signingkey = 77D1DB45FBED7F99
 
 [core]
 	editor = nvim
@@ -21,3 +21,5 @@
   s = status
   cm = commit -m
   co = checkout
+[commit]
+	gpgsign = true

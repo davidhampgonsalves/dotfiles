@@ -2,8 +2,6 @@ source ~/.nvim.plug
 
 let mapleader=" "
 
-color dracula
-
 set backspace=indent,eol,start
 
 set number
@@ -35,6 +33,9 @@ set synmaxcol=512 " disable syntax highlighting after 128 chars
 set wildmenu
 set wildmode=longest:full,full
 
+hi clear SpellBad " incorrectly spelled word style
+hi SpellBad cterm=underline,bold ctermfg=172
+
 ":hi CursorLine ctermbg=darkred
 augroup CursorLine
   au!
@@ -43,8 +44,7 @@ augroup CursorLine
 augroup END
 
 " Spell check enabled for markdown files
-au BufRead *.md setlocal spell
-au BufRead *.markdown setlocal spell
+autocmd BufRead,BufNewFile *.md setlocal spell
 
 highlight StatusLine NONE ctermbg=Black ctermfg=LightGreen
 set statusline=
@@ -55,6 +55,10 @@ set statusline+=\ %c
 set statusline+=\ %h%m%r%w
 
 let mapleader = "\<Space>"
+
+" Disable SQL auto completion
+" ===========================
+let g:omni_sql_no_default_maps = 1
 
 " Buffer switching
 " ================
@@ -92,7 +96,6 @@ autocmd BufWritePre * if index(blacklist, &ft) < 0 | :DeleteTrailingWhitespace
 " Movement doens't apply in fzf
 :au FileType fzf :tnoremap <buffer> <C-J> <C-W><C-J>
 :au FileType fzf :tnoremap <buffer> <C-k> <C-W><C-k>
-
 
 " JSX
 :let g:jsx_ext_required = 0

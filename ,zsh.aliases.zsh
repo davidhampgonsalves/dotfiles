@@ -4,7 +4,7 @@ hash -d w="$HOME/work"
 #alias ag='ag --path-to-ignore ~/.agignore'
 alias rg='rg --smart-case'
 ff () { rg -l $* }
-fff () { rg $* }
+fff () { rg -M 150 $* }
 
 alias e=nvim
 alias t=tmux
@@ -16,6 +16,7 @@ alias gcp='git cherry-pick'
 alias gco='git checkout'
 alias gs='git status'
 alias gb='git branch -a | fzf-tmux'
+alias grb='git rebase'
 
 alias ...='../..'
 alias ....='../../..'
@@ -58,9 +59,9 @@ tmux-w () {
   tmux split-window -v -p 50
   tmux select-pane -t 2
   tmux split-window -v -p 50
-  tmux send-keys -t ${window}.1 'cd ~/work/opencounter && e' Enter
-  tmux send-keys -t ${window}.2 'cd ~/work/opencounter && postgres.start && redis.start && bin/rails s -b 0.0.0.0 -p 3000' Enter
-  tmux send-keys -t ${window}.3 'cd ~/work/opencounter && yarn start' Enter
+  tmux send-keys -t ${window}.1 'cd ~/work/opencounter ; sleep 1 ; e' Enter
+  tmux send-keys -t ${window}.2 'cd ~/work/opencounter && postgres.start && redis.start ; bin/rails s -b 0.0.0.0 -p 3000' Enter
+  tmux send-keys -t ${window}.3 'cd ~/work/opencounter ; yarn start' Enter
   tmux send-keys -t ${window}.4 'cd ~/work/opencounter' Enter
   tmux set-window-option -t $SESSION:0 automatic-rename off
 

@@ -1,16 +1,11 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'dracula/vim'
-
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'vim-scripts/DeleteTrailingWhitespace'
 Plug 'tpope/vim-fugitive'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'scrooloose/nerdcommenter'
-Plug 'nelstrom/vim-visual-star-search'
-Plug 'othree/vim-jsx'
-Plug 'pangloss/vim-javascript'
 Plug 'othree/eregex.vim'
 
 call plug#end()
