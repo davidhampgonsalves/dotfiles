@@ -3,8 +3,8 @@
 # install home brew and cask
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew tap caskroom/cask
-brew tap caskroom/fonts
+brew tap homebrew/cask-cask
+brew tap homebrew/fonts
 brew tap getantibody/homebrew-antibody
 
 # install some apps
@@ -19,7 +19,7 @@ function installPkg {
 }
 
 echo "# Installing Packages"
-installPkg "brew cask" "transmission google-chrome vlc flux java font-source-code-pro slack flycut firefox-nightly"
+installPkg "brew cask" "transmission google-chrome vlc flux java font-source-code-pro slack flycut firefox-nightly shiftit"
 installPkg "brew" "neovim/neovim/neovim zsh antibody tmux tree htop go leiningen coreutils rbenv fzf ag postgres redis reattach-to-user-namespace n yarn heroku ripgrep gpg pinentry-mac"
 
 # Setup Dirs

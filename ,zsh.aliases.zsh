@@ -69,3 +69,11 @@ tmux-w () {
   tmux select-window -t $SESSION:0
   tmux -2 attach -t $SESSION
 }
+
+brew-update() {
+  brew update
+  brew upgrade
+  brew cask upgrade
+  antibody update
+  e +'PlugInstall --sync' +qa
+}
