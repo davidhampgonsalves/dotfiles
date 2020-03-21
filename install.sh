@@ -19,8 +19,12 @@ function installPkg {
 }
 
 echo "# Installing Packages"
-installPkg "brew cask" "transmission google-chrome vlc flux java font-source-code-pro slack flycut firefox-nightly shiftit"
-installPkg "brew" "neovim/neovim/neovim zsh antibody tmux tree htop go leiningen coreutils rbenv fzf ag postgres redis reattach-to-user-namespace n yarn heroku ripgrep gpg pinentry-mac"
+installPkg "brew cask" "transmission google-chrome vlc flux java font-source-code-pro slack flycut firefox-nightly shiftit notable"
+installPkg "brew" "neovim/neovim/neovim zsh antibody tmux tree htop go leiningen coreutils rbenv fzf ag postgres redis reattach-to-user-namespace n yarn heroku ripgrep gpg pinentry-mac fswatch"
+
+brew install emacs
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+emacs --insecure
 
 # Setup Dirs
 mkdir -p ~/repos ~/work
@@ -52,14 +56,9 @@ defaults write -g com.apple.mouse.scaling 3
 defaults write com.apple.screensaver askForPassword -int 0
 defaults write com.apple.screensaver askForPasswordDelay -int 30
 sudo systemsetup -setcomputersleep 15 > /dev/null
-<<<<<<< HEAD
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-defaults write NSGlobalDomain KeyRepeat -int 0.8
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
-=======
 defaults write -g InitialKeyRepeat -int 10
 defaults write -g KeyRepeat -int 1
->>>>>>> updates
+
 # Disabe the webview and open captive wifi spots in default browser
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -boolean false
 

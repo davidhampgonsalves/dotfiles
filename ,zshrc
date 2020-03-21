@@ -2,7 +2,7 @@ source <(antibody init)
 
 antibody bundle zsh-users/zsh-syntax-highlighting
 antibody bundle mafredri/zsh-async
-antibody bundle sindresorhus/pure
+antibody bundle sindresorhus/pure branch:indestructible-pure
 
 setopt autocd
 
@@ -59,7 +59,7 @@ zstyle ":completion:*:*:kill:*:processes" list-colors "=(#b) #([0-9]#)*=0=01;31"
 zstyle ":completion:*:kill:*" command "ps -u $USER -o pid,%cpu,tty,cputime,cmd"
 
 export GOPATH="$HOME/go"
-export PATH="$HOME/.yarn/bin:$GOPATH/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$GOPATH/bin:$PATH:$HOME/.cargo/bin"
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`

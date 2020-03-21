@@ -1,0 +1,16 @@
+font:
+  normal:
+    family: Source Code Pro
+    style: Regular
+  bold:
+    family: Source Code Pro
+    style: Bold
+  italic:
+    family: Source Code Pro
+    style: Italic
+
+debug:
+  persistent_logging: true
+  log_level: Debug
+  print_events: false
+  ref_test: false

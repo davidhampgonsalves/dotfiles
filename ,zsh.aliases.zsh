@@ -70,10 +70,29 @@ tmux-w () {
   tmux -2 attach -t $SESSION
 }
 
-brew-update() {
+update() {
   brew update
   brew upgrade
   brew cask upgrade
   antibody update
-  e +'PlugInstall --sync' +qa
+  nvim +PlugInstall +qall > /dev/null
+  rustup update
 }
+
+fswatch /Users/davidhamp-gonsalves/repos/notes -e '\.git' | xargs -0 -n 1 zsh -c '
+  cd /Users/davidhamp-gonsalves/repos/notes
+
+  # wait 20 minutes after change and if after that there are still changes then commit them
+  let "sec = 20 * 60"
+  sleep $sec
+  gstatus=`git status --porcelain`
+  if [ ${#gstatus} -ne 0 ]
+  then
+    git add --all
+    git commit -m "auto sync"
+    git pull
+    git push
+  fi
+' &
+note() { e /Users/davidhamp-gonsalves/repos/notes/Readme.md }
+notes() { e /Users/davidhamp-gonsalves/repos/notes/ }

@@ -1,7 +1,7 @@
 [user]
 	name = David Hamp-Gonsalves
 	email = davidhampgonsalves@gmail.com
-	signingkey = 44C4AF3D
+	signingkey = 4DCFA56222E49D3A0F321E7A77D1DB45FBED7F99
 
 [core]
 	editor = nvim
