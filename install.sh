@@ -1,11 +1,12 @@
 #!/bin/bash
 
-# install home brew and cask
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# setup git config
+curl -s https://raw.githubusercontent.com/davidhampgonsalves/dotfiles/master/,gitconfig >> ~/.gitconfig
 
-brew tap homebrew/cask-cask
-brew tap homebrew/fonts
-brew tap getantibody/homebrew-antibody
+# install home brew and cask
+[ ! "$(command -v brew)" ] && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+brew tap homebrew/cask-fonts
 
 # install some apps
 function installPkg {
@@ -19,66 +20,20 @@ function installPkg {
 }
 
 echo "# Installing Packages"
-installPkg "brew cask" "transmission google-chrome vlc flux java font-source-code-pro slack flycut firefox-nightly shiftit notable"
-installPkg "brew" "neovim/neovim/neovim zsh antibody tmux tree htop go leiningen coreutils rbenv fzf ag postgres redis reattach-to-user-namespace n yarn heroku ripgrep gpg pinentry-mac fswatch"
+installPkg "brew cask" "transmission google-chrome vlc flux java font-source-code-pro slack flycut firefox-nightly shiftit"
+installPkg "brew" "neovim/neovim/neovim zsh tmux tree htop go leiningen coreutils rbenv fzf ag postgres redis reattach-to-user-namespace n yarn heroku ripgrep gpg pinentry-mac fswatch"
 
-brew install emacs
-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-emacs --insecure
-
-# Setup Dirs
-mkdir -p ~/repos ~/work
-cd ~/repos
-git clone git@github.com:davidhampgonsalves/dotfiles.git
-cd dotfiles
-
-# VIM PLUG
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# For Glutentags
-mkdir -p ~/.tag-cache
+curl -sfL git.io/antibody | sh -s - -b /usr/local/bin
 
 chsh -s /bin/zsh
 touch ~/.zsh.user.zsh
 
 /usr/local/opt/fzf/install
 
-git submodule init
-git submodule update --recursive --remote
-
-cd mathiasbynens-dotfiles && ./.macos
-cd ..
-
-# revert some of those defaults
-defaults write com.googlecode.iterm2 AlternateMouseScroll -bool true
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
-defaults write -g com.apple.mouse.scaling 3
-defaults write com.apple.screensaver askForPassword -int 0
-defaults write com.apple.screensaver askForPasswordDelay -int 30
-sudo systemsetup -setcomputersleep 15 > /dev/null
-defaults write -g InitialKeyRepeat -int 10
-defaults write -g KeyRepeat -int 1
-
-# Disabe the webview and open captive wifi spots in default browser
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -boolean false
-
-./link.sh
-
-git config --global core.excludesfile ~/.gitignore_global
-
 # transmission settings
 defaults write org.m0k.transmission DeleteOriginalTorrent  1
 defaults write org.m0k.transmission DownloadAsk 0
 defaults write org.m0k.transmission DownloadLocationConstant 1
 defaults write org.m0k.transmission NSNavLastRootDirectory "~/Downloads"
-
-echo "things you need to do:"
-echo "======================"
-echo "  config terminal.app to use dracula"
-echo "  copy over ssh keys or generate new ones"
-echo "  caps-lock to ctrl in keyboard settings"
-echo "  run :PlugInstall in neovim"
-echo "  slack dracula color scheme"
-#echo "  setup GPG/SSH keys git config --global user.signingkey 44C4AF3D"
-
 

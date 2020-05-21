@@ -2,7 +2,6 @@ source <(antibody init)
 
 antibody bundle zsh-users/zsh-syntax-highlighting
 antibody bundle mafredri/zsh-async
-antibody bundle sindresorhus/pure branch:indestructible-pure
 
 setopt autocd
 
@@ -59,7 +58,7 @@ zstyle ":completion:*:*:kill:*:processes" list-colors "=(#b) #([0-9]#)*=0=01;31"
 zstyle ":completion:*:kill:*" command "ps -u $USER -o pid,%cpu,tty,cputime,cmd"
 
 export GOPATH="$HOME/go"
-export PATH="$HOME/.yarn/bin:$GOPATH/bin:$PATH:$HOME/.cargo/bin"
+export PATH="/usr/local/sbin:$HOME/.yarn/bin:$GOPATH/bin:$PATH:$HOME/.cargo/bin"
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
@@ -67,3 +66,10 @@ export PATH="$HOME/.yarn/bin:$GOPATH/bin:$PATH:$HOME/.cargo/bin"
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+# prompt
+autoload -Uz vcs_info
+precmd () { vcs_info }
+setopt prompt_subst
+PS1=$'\n'"%F{yellow}%~%f %F{blue}\$vcs_info_msg_0_%f"$'\n'"%F{blue}>%f "
+zstyle ':vcs_info:git:*' formats '%b'

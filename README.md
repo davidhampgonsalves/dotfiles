@@ -4,12 +4,12 @@ NeoVim + FZF + ZSH + TMATE + Terminal.app
 
 ```
 Homebrew for package management.
-Draclua theme everywhere.
 ```
 
 ## Install
+Setup ssh keys
 ```
-bash <(curl -s https://raw.githubusercontent.com/davidhampgonsalves/dotfiles/master/install.sh)
+bash <(curl -s https://raw.githubusercontent.com/davidhampgonsalves/dotfiles/master/setup.sh)
 ```
 
 ## NeoVim
@@ -17,12 +17,11 @@ Vim Plug with just a few plugins (< 10 plugins).
 * Use FZF Buffers for quick nav (`Ctrl-B`).
 * Navigate vim / tmux splits (`Ctrl` + `hjkl`).
 * Use `Ctrl-[` over `ESC`.
-* Use simple statusline over airline.
+* Use simple statusline.
 
 ## ZSH
 Lightweight ZSH settings (no oh-my-zsh or alternates).
 * Antibody package manager.
-* Pure theme.
 
 ## FZF
 FZF everywhere (nvim, zsh).
@@ -32,15 +31,3 @@ Mathiasbynens OSX dotfile settings with some overriden preferences.
 
 ## Tmux
 Tmux for now, copy/paste complexity/issues are getting annoying.
-
-## Terminal.app
-Avoid complexity of iTerm2 tmux integrations.
-
-# Install
-need to break this up, one script for brew + package install, one for linking, one of osx config
-
-all kicked off by a curl pointing at github that
-install git
-checkout repo to ~/r/dotfiles
-run scripts
-
