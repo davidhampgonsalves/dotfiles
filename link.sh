@@ -11,3 +11,5 @@ done
 
 ln -s -f ${0:a:h}'/nvim-init.vim' $HOME/.config/nvim/init.vim
 ln -s -f ${0:a:h}'/alacritty.yml' $HOME/.config/alacritty/alacritty.yml
+
+echo "If everthing looks good, run `~r/mathiasbynens-dotfiles/.macos`"

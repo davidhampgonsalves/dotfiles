@@ -20,6 +20,8 @@ alias gs='git status'
 alias gb='git branch -a | fzf-tmux'
 alias grb='git rebase'
 
+alias tf=terraform
+
 alias ...='../..'
 alias ....='../../..'
 alias .....='../../../..'
@@ -59,5 +61,4 @@ sync-notes &
 
 fswatch fswatch -e ".*" -i ".*/[^.]*\\.md$" /Users/davidhamp-gonsalves/repos/notes | xargs -0 -n 1 zsh -c sync-notes &
 note() { e /Users/davidhamp-gonsalves/repos/notes/Readme.md }
-junk() { e "/Users/davidhamp-gonsalves/repos/notes/nonsense-little-junk-things.md" }
 notes() { e /Users/davidhamp-gonsalves/repos/notes/ }
