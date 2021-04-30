@@ -18,8 +18,8 @@ function installPkg {
 }
 
 echo "# Installing Packages"
+installPkg "brew" "neovim/neovim/neovim zsh tmux tree htop go leiningen coreutils rbenv fzf ag postgres redis reattach-to-user-namespace n yarn heroku ripgrep gpg pinentry-mac fswatch terraform alacritty awscli"
 installPkg "brew cask" "transmission google-chrome vlc flux java font-source-code-pro slack flycut firefox shiftit"
-installPkg "brew" "neovim/neovim/neovim zsh tmux tree htop go leiningen coreutils rbenv fzf ag postgres redis reattach-to-user-namespace n yarn heroku ripgrep gpg pinentry-mac fswatch terraform alacritty"
 
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 curl -sfL git.io/antibody | sh -s - -b /usr/local/bin

@@ -12,8 +12,8 @@ eval $(ssh-agent)
 
 eval "$(rbenv init - --no-rehash)"
 
-export EDITOR=/usr/local/bin/nvim
-export VISUAL=/usr/local/bin/nvim
+# export EDITOR=/usr/local/bin/nvim
+# export VISUAL=/usr/local/bin/nvim
 
 HISTSIZE=5000               #How many lines of history to keep in memory
 HISTFILE=~/.zsh_history     #Where to save history to disk

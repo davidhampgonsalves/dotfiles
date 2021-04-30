@@ -28,7 +28,9 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-set synmaxcol=512 " disable syntax highlighting after 128 chars
+" ruby syntax highlighting is super slow
+set synmaxcol=80 " disable syntax highlighting after x chars
+set regexpengine=1
 
 set wildmenu
 set wildmode=longest:full,full
