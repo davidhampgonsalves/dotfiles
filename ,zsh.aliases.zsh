@@ -19,6 +19,8 @@ alias gs='git status'
 alias gb='git branch -a | fzf-tmux'
 alias grb='git rebase'
 
+alias rspec='LOCAL_VIRTUAL_HOST="lvh.me" bin/rspec'
+
 alias tf=terraform
 
 alias ...='../..'
@@ -26,20 +28,19 @@ alias ....='../../..'
 alias .....='../../../..'
 
 # postgres start / stop
-alias postgres.start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias postgres.start="brew services start postgresql"
 alias postgres.stop="brew services stop postgresql"
 
 alias redis.start="redis-server /usr/local/etc/redis.conf --daemonize yes"
 
 update() {
-  softwareupdate --all --install --force
   brew update
   brew upgrade
   brew upgrade --cask
   antibody update
   nvim +PlugInstall +qall > /dev/null
   rustup update
+  softwareupdate --all --install --force
 }
 
 note() { e /Users/davidhamp-gonsalves/repos/notes/default.md }

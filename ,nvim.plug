@@ -6,6 +6,5 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'othree/eregex.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'vim-scripts/DeleteTrailingWhitespace'
-Plug 'tpope/vim-fugitive'
 
 call plug#end()
