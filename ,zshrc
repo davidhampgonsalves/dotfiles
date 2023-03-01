@@ -75,3 +75,6 @@ PS1=$'\n'"%F{yellow}%~%f %F{blue}\$vcs_info_msg_0_%f"$'\n'"%F{blue}>%f "
 zstyle ':vcs_info:git:*' formats '%b'
 alias id3filename="zsh ~/.id3-to-filename/id3filename.zsh"
 alias id3filename="zsh ~/.id3-to-filename/id3filename.zsh"
+
+# Created by `pipx` on 2022-07-14 16:44:57
+export PATH="$PATH:/Users/davidhamp-gonsalves/.local/bin"

@@ -14,7 +14,7 @@
 	default = simple
 
 [alias]
-  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   pll = log --graph --pretty=format:'%Cred%h%Creset %an: %s %Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   lll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	p = pull --rebase --autostash
@@ -24,15 +24,20 @@
 
 [commit]
 	gpgsign = true
+
+[gpg]
+	program = gpg
+
+[user]
+	name = David Hamp-Gonsalves
+	email = davidhampgonsalves@gmail.com
+	signingkey = 4DCFA56222E49D3A0F321E7A77D1DB45FBED7F99
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[user]
-	name = David Hamp-Gonsalves
-	email = davidhampgonsalves@gmail.com
-	signingkey = 4DCFA56222E49D3A0F321E7A77D1DB45FBED7F99
 
 [core]
 	editor = nvim
@@ -84,12 +89,5 @@
   cm = commit -m
   co = checkout
 
-[commit]
-	gpgsign = true
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 [pull]
 	ff = only

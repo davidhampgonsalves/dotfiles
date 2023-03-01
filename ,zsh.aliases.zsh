@@ -19,7 +19,7 @@ alias gs='git status'
 alias gb='git branch -a | fzf-tmux'
 alias grb='git rebase'
 
-alias rspec='LOCAL_VIRTUAL_HOST="lvh.me" bin/rspec'
+alias rspec='LOCAL_VIRTUAL_HOST="lvh.me" HEADLESS=false RSPEC_RETRY_RETRY_COUNT=0 bin/rspec'
 
 alias tf=terraform
 
