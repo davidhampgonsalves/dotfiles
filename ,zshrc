@@ -1,16 +1,17 @@
-source <(antibody init)
-
-antibody bundle zsh-users/zsh-syntax-highlighting
-antibody bundle mafredri/zsh-async
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+antidote load
+antidote bundle zsh-users/zsh-syntax-highlighting
+antidote bundle mafredri/zsh-async
 
 setopt autocd
 
 # set java home
 export JAVA_HOME="$(/usr/libexec/java_home)"
+export GPG_TTY=$(tty) # fix gpg pinentry
 
 eval $(ssh-agent)
 
-eval "$(rbenv init - --no-rehash)"
+eval "$(rbenv init - zsh)"
 
 # export EDITOR=/usr/local/bin/nvim
 # export VISUAL=/usr/local/bin/nvim

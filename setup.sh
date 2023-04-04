@@ -1,8 +1,9 @@
 #!/bin/bash
-
 echo "Have you already:"
 echo "  copyied over ssh keys or generated new ones?"
-echo "  set caps-lock to ctrl in keyboard settings?"
+echo "  install homebrew from https://https://brew.sh/"
+echo "  setup touchpad manually"
+echo "  set osx defaults `git clone git@github.com:mathiasbynens/dotfiles.git ~/repos/mathiasbynens-dotfiles` and run `~r/mathiasbynens-dotfiles/.macos`"
 
 read -p "y/n: " choice
 case "$choice" in
@@ -17,8 +18,6 @@ esac
 mkdir -p ~/repos ~/work
 cd ~/repos
 [ ! -d "dotfiles" ] && git clone git@github.com:davidhampgonsalves/dotfiles.git
-[ ! -d "dotfiles" ] && git clone git@github.com:mathiasbynens/dotfiles.git mathiasbynens-dotfiles
-
 cd dotfiles
 
 echo "If everthing looks good, run `./install.sh`"

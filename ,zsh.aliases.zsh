@@ -37,7 +37,7 @@ update() {
   brew update
   brew upgrade
   brew upgrade --cask
-  antibody update
+  antidote update
   nvim +PlugInstall +qall > /dev/null
   rustup update
   softwareupdate --all --install --force
