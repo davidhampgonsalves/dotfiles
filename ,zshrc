@@ -1,12 +1,10 @@
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
-antidote bundle zsh-users/zsh-syntax-highlighting
-antidote bundle mafredri/zsh-async
 
 setopt autocd
 
 # set java home
-export JAVA_HOME="$(/usr/libexec/java_home)"
+# export JAVA_HOME="$(/usr/libexec/java_home)"
 export GPG_TTY=$(tty) # fix gpg pinentry
 
 eval $(ssh-agent)
@@ -60,6 +58,7 @@ zstyle ":completion:*:kill:*" command "ps -u $USER -o pid,%cpu,tty,cputime,cmd"
 
 export GOPATH="$HOME/go"
 export PATH="/usr/local/sbin:$HOME/.yarn/bin:$GOPATH/bin:$PATH:$HOME/.cargo/bin"
+export PYENV_VERSION=3.11.6
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
@@ -76,6 +75,3 @@ PS1=$'\n'"%F{yellow}%~%f %F{blue}\$vcs_info_msg_0_%f"$'\n'"%F{blue}>%f "
 zstyle ':vcs_info:git:*' formats '%b'
 alias id3filename="zsh ~/.id3-to-filename/id3filename.zsh"
 alias id3filename="zsh ~/.id3-to-filename/id3filename.zsh"
-
-# Created by `pipx` on 2022-07-14 16:44:57
-export PATH="$PATH:/Users/davidhamp-gonsalves/.local/bin"

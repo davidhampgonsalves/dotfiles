@@ -10,3 +10,5 @@ for filePath in $PWD/\,*; do
 done
 
 ln -s -f ${0:a:h}'/nvim-init.vim' $HOME/.config/nvim/init.vim
+ln -s -f ${0:a:h}'/Brave-Browser/Local State' '/Users/davidhamp-gonsalves/repos/dotfiles/Brave-Browser/Local State'
+ln -s -f ${0:a:h}'/Brave-Browser/Default/Preferences' '/Users/davidhamp-gonsalves/repos/dotfiles/Brave-Browser/Default/Preferences'

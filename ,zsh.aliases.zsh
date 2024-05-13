@@ -27,6 +27,9 @@ alias ...='../..'
 alias ....='../../..'
 alias .....='../../../..'
 
+alias add-music='. ~r/music-server/bin/add-folder.sh'
+alias add-yt='. ~r/music-server/bin/add-yt.sh'
+
 # postgres start / stop
 alias postgres.start="brew services start postgresql"
 alias postgres.stop="brew services stop postgresql"

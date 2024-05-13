@@ -7,7 +7,7 @@
 	excludesfile = /Users/david/.gitignore_global
 
 [web]
-	browser = firefox-nightly
+	browser = brave-browser
 
 [push]
 	default = simple
