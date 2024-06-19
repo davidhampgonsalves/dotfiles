@@ -86,3 +86,6 @@ eval "$(pyenv init -)"
 
 # Added by GDK bootstrap
 source /Users/david/.asdf/asdf.sh
+
+# Created by `pipx` on 2024-05-29 19:42:16
+export PATH="$PATH:/Users/davidhamp-gonsalves/.local/bin"
