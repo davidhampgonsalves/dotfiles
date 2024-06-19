@@ -16,5 +16,5 @@ Then run `setup.sh`
 - VScode login & sync
 - Start Maccy at startup
 - Run update after install
-- Copy gnupg over, update pin-entry path (which pin-entry) in .gnupg/gpg-agent.conf
+- Copy gnupg over, update pin-entry path (which pinentry-mac) in .gnupg/gpg-agent.conf
 - Copy over ssh keys .ssh

@@ -11,7 +11,8 @@ case "$choice" in
 esac
 
 defaults write -g ApplePressAndHoldEnabled -bool false
-defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write -g InitialKeyRepeat -int 10
+defaults write -g KeyRepeat -int 0.9
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-echo "If everthing looks good, run './install.sh'"
+echo "If everthing looks good, run install.sh"

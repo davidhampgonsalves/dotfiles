@@ -10,7 +10,6 @@ pip3 install aws-mfa
 
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-chsh -s /bin/zsh
 touch ~/.zsh.user.zsh
 
 # transmission settings
